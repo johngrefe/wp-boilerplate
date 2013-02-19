@@ -19,4 +19,4 @@ function enqueue_scripts() {
 
 }
 
-add_action('init', 'enqueue_scripts');
+add_action('get_header', 'enqueue_scripts');
