@@ -8,3 +8,6 @@
 wp-content/*
 !wp-content/plugins/
 !wp-content/themes/
+
+# Ignore system files, misc.
+.DS_Store
