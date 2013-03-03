@@ -1,0 +1,3 @@
+[submodule "wp-content/plugins/acf"]
+	path = wp-content/plugins/acf
+	url = git://github.com/elliotcondon/acf.git
