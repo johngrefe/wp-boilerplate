@@ -1,0 +1,6 @@
+[submodule "wp-content/plugins/acf"]
+	path = wp-content/plugins/acf
+	url = git://github.com/elliotcondon/acf.git
+[submodule "wp-content/plugins/WPThumb"]
+	path = wp-content/plugins/WPThumb
+	url = git://github.com/humanmade/WPThumb.git
