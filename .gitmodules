@@ -4,3 +4,6 @@
 [submodule "wp-content/plugins/WPThumb"]
 	path = wp-content/plugins/WPThumb
 	url = git://github.com/humanmade/WPThumb.git
+[submodule "wp-content/plugins/gjmaps"]
+	path = wp-content/plugins/gjmaps
+	url = git@github.com:GunnJerkens/gjmaps.git
