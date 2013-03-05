@@ -18,15 +18,21 @@
 //define('WP_HOME','http://brookla.dev');
 //define('WP_SITEURL','http://brookla.dev');
 
+// Define upload_url_path to embed media with domain-relative URLs
+define('UPLOADS', "/wp-content/uploads");
+
+// If that doesn't work, try adding this in the theme's functions.php
+// update_option('upload_url_path', '/wp-content/uploads');
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', 'database_name_here');
 
 /** MySQL database username */
-define('DB_USER', 'username_here');
+define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'password_here');
+define('DB_PASSWORD', '');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
