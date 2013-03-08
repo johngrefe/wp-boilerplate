@@ -1,25 +1,15 @@
-<!doctype html>
-
+<!DOCTYPE html>
+<html class="no-js">
 <head>
-  <meta charset="utf-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width" />
 
-  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
-       More info: h5bp.com/b/378 -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title><?php wp_title(); ?></title>
+	<meta name="description" content="" />
 
+	<link rel="stylesheet/css" href="<?php bloginfo('template_directory'); ?>/style/css/screen.css" />
 
-  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-
-
-  <link rel="stylesheet/css" href="<?php bloginfo('template_directory'); ?>/style.css">
-
-<?php wp_head(); ?>
-
+	<?php wp_head(); ?>
 </head>
-
 <body>
-  <header>
-
-  </header>
-  <div role="main">
