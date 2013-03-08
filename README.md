@@ -1,6 +1,18 @@
-wp-boilerplate
-==============
+## wp-boilerplate
 
 GunnJerkens Wordpress boilerplate theme + plugins
 
-Run `git submodule update --init` when cloning repo to retrieve submodules
+To initialize a new project, clone and then execute the init.sh script:
+
+```
+./init.sh
+```
+
+This will remove the .git folder, initialize it as a new repo, and loop through .gitmodules to initialize the submodules
+
+To clone and edit the boilerplate repo normally, run `git submodule update --init` to retrieve submodules
+
+## Dependencies
+[SASS](http://sass-lang.com/): `gem install sass`  
+[Compass](http://compass-style.org/): `gem install compass`  
+[Compass Normalize](https://github.com/ksmandersen/compass-normalize): `gem install compass-normalize`  
