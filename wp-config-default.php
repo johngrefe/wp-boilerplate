@@ -15,18 +15,19 @@
  */
 
 // Define hostname for dev environment
-//define('WP_HOME','http://brookla.dev');
-//define('WP_SITEURL','http://brookla.dev');
+// define('WP_HOME','http://site.dev');
+// define('WP_SITEURL','http://site.dev');
 
-// Define upload_url_path to embed media with domain-relative URLs
-define('UPLOADS', "/wp-content/uploads");
+// Enable Uploads by Proxy
+// define('UBP_LIVE_DOMAIN', 'site.epxhost.com');
 
-// If that doesn't work, try adding this in the theme's functions.php
-// update_option('upload_url_path', '/wp-content/uploads');
+// Enable Auto Updater for OS X dev environment
+// See http://dancingengineer.com/computing/2009/07/how-to-install-wordpress-on-mac-os-x-leopard and comments
+// define('FS_METHOD', 'direct');
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'database_name_here');
+define('DB_NAME', 'site');
 
 /** MySQL database username */
 define('DB_USER', 'root');
