@@ -3,7 +3,7 @@
 set -e
 
 
-read -p "Are you sure? " -n 1
+read -p "Do you want to remove your .git and reinitialize all submodules? " -n 1
 if [[ ! $REPLY =~ ^[Yy]$ ]]
 then
     exit 1
@@ -18,14 +18,14 @@ while read -u 3 path_key path
     do
         url_key=$(echo $path_key | sed 's/\.path/.url/')
         url=$(git config -f .gitmodules --get "$url_key")
-
-        read -p "Are you sure you want to delete $path and re-initialize as a new submodule? " yn
-        case $yn in
-            [Yy]* ) rm -rf $path; git submodule add $url $path; echo "$path has been initialized";;
-            [Nn]* ) exit;;
-            * ) echo "Please answer yes or no.";;
-        esac
-        
+        rm -rf $path; git submodule add $url $path; 
+        echo "$path has been initialized";
     done 3<tempfile
 
 rm tempfile
+
+wget http://wordpress.org/latest.zip
+
+sudo unzip ./latest.zip
+
+sudo mv -n wordpress/* .
