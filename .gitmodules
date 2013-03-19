@@ -7,3 +7,6 @@
 [submodule "wp-content/plugins/gjmaps"]
 	path = wp-content/plugins/gjmaps
 	url = git@github.com:GunnJerkens/gjmaps.git
+[submodule "wp-content/plugins/uploads-by-proxy"]
+	path = wp-content/plugins/uploads-by-proxy
+	url = git@bitbucket.org:brainstormmedia/uploads-by-proxy.git
