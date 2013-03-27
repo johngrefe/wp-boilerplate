@@ -12,7 +12,13 @@ This will remove the .git folder, initialize it as a new repo, and loop through 
 
 *Gotcha: the submodules will be checked out at the tip of their master branch instead of the same commit as the boilerplate repo*
 
-To clone and edit the boilerplate repo normally, run `git submodule update --init` to retrieve submodules
+To clone and edit the boilerplate repo normally, run `git submodule update --init` to retrieve submodules  
+
+After initializing, enter your environment variables in wp-config and db_sync.sh.  You can then run db_sync.sh to sync down from the production database:
+
+```
+./db_sync.sh
+```
 
 ## Dependencies
 [SASS](http://sass-lang.com/): `gem install sass`  
