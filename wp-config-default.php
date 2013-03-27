@@ -14,26 +14,74 @@
  * @package WordPress
  */
 
-// Define hostname for dev environment
-// define('WP_HOME','http://site.dev');
-// define('WP_SITEURL','http://site.dev');
+    define('DB_NAME', 'production_db_name');
+    define('DB_USER', 'production_db_user');
+    define('DB_PASSWORD', 'production_db_password');
+    define('DB_HOST', 'production_db_host');
 
-// Enable Uploads by Proxy
-// define('UBP_LIVE_DOMAIN', 'site.epxhost.com');
+if ( file_exists( dirname( __FILE__ ) . '/env_local' ) ) {
 
-// Enable Auto Updater for OS X dev environment
-// See http://dancingengineer.com/computing/2009/07/how-to-install-wordpress-on-mac-os-x-leopard and comments
-// define('FS_METHOD', 'direct');
+	// Define hostname for dev environment
+	//define('WP_HOME','http://site.dev');
+	//define('WP_SITEURL','http://site.dev');
 
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'site');
+	// Enable Uploads by Proxy
+	//define('UBP_LIVE_DOMAIN', 'site.epxhost.com');
 
-/** MySQL database username */
-define('DB_USER', 'root');
+	// Enable Auto Updater for OS X dev environment
+	// See http://dancingengineer.com/computing/2009/07/how-to-install-wordpress-on-mac-os-x-leopard and comments
+	//define('FS_METHOD', 'direct');
 
-/** MySQL database password */
-define('DB_PASSWORD', '');
+    // Local Environment
+    define('WP_ENV', 'local');
+    define('WP_DEBUG', true);
+
+    define('DB_NAME', 'local_db_name');
+    define('DB_USER', 'local_db_user');
+    define('DB_PASSWORD', 'local_db_password');
+    define('DB_HOST', 'local_db_host');
+
+} elseif ( file_exists( dirname( __FILE__ ) . '/env_stage' ) ) {
+
+	// Define hostname for dev environment
+	//define('WP_HOME','http://site.dev');
+	//define('WP_SITEURL','http://site.dev');
+
+	// Enable Uploads by Proxy
+	//define('UBP_LIVE_DOMAIN', 'site.epxhost.com');
+
+	// Enable Auto Updater for OS X dev environment
+	// See http://dancingengineer.com/computing/2009/07/how-to-install-wordpress-on-mac-os-x-leopard and comments
+	//define('FS_METHOD', 'direct');
+
+    // Playground Environment
+    define('WP_ENV', 'stage');
+    define('WP_DEBUG', true);
+
+    define('DB_NAME', 'stage_db_name');
+    define('DB_PASSWORD', 'stage_db_password');
+    define('DB_HOST', 'stage_db_host');
+
+    // ... playground db constants
+} else {
+
+	// Define hostname for dev environment
+	//define('WP_HOME','http://site.dev');
+	//define('WP_SITEURL','http://site.dev');
+
+	// Enable Uploads by Proxy
+	//define('UBP_LIVE_DOMAIN', 'site.epxhost.com');
+
+	// Enable Auto Updater for OS X dev environment
+	// See http://dancingengineer.com/computing/2009/07/how-to-install-wordpress-on-mac-os-x-leopard and comments
+	//define('FS_METHOD', 'direct');
+
+    // Production Environment
+    define('WP_ENV', 'production');
+    define('WP_DEBUG', false);
+
+    // ... production db constants
+}
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -43,6 +91,7 @@ define('DB_CHARSET', 'utf8');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
+
 
 /**#@+
  * Authentication Unique Keys and Salts.

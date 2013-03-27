@@ -9,9 +9,12 @@ then
     exit 1
 fi
 
+
 rm -rf .git
 git init
 
+
+#Initialize Submodules
 git config -f .gitmodules --get-regexp '^submodule\..*\.path$' > tempfile
 
 while read -u 3 path_key path
@@ -29,3 +32,4 @@ wget http://wordpress.org/latest.zip
 sudo unzip ./latest.zip
 
 sudo mv -n wordpress/* .
+

@@ -5,6 +5,7 @@
 !wp-content/
 !wp-config-default.php
 !init.sh
+!db_sync.sh
  
 # Ignore everything in the "wp-content" directory, except the "plugins"
 # and "themes" directories.
@@ -23,6 +24,8 @@ wp-content/*
 *.vi
 *~
 *.sass-cache
+env_local
+evn_stage
 
 # OS or Editor folders
 .DS_Store
