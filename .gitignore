@@ -6,6 +6,7 @@
 !wp-config-default.php
 !init.sh
 !db_sync.sh
+!README.md
  
 # Ignore everything in the "wp-content" directory, except the "plugins"
 # and "themes" directories.
