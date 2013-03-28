@@ -31,5 +31,7 @@ wget http://wordpress.org/latest.zip
 
 sudo unzip ./latest.zip
 
+rm -f wp-config-sample.php
+
 sudo mv -n wordpress/* .
 
