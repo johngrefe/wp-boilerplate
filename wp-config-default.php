@@ -14,11 +14,6 @@
  * @package WordPress
  */
 
-    define('DB_NAME', 'production_db_name');
-    define('DB_USER', 'production_db_user');
-    define('DB_PASSWORD', 'production_db_password');
-    define('DB_HOST', 'production_db_host');
-
 if ( file_exists( dirname( __FILE__ ) . '/env_local' ) ) {
 
 	// Define hostname for dev environment
@@ -33,17 +28,15 @@ if ( file_exists( dirname( __FILE__ ) . '/env_local' ) ) {
 	//define('FS_METHOD', 'direct');
 
     // Local Environment
-    define('WP_ENV', 'local');
-    define('WP_DEBUG', true);
-
-    define('DB_NAME', 'local_db_name');
-    define('DB_USER', 'local_db_user');
-    define('DB_PASSWORD', 'local_db_password');
-    define('DB_HOST', 'local_db_host');
+    $wp_env = 'local';
+    $wp_debug = true;
+    $db_name = '';
+	$db_user = '';
+	$db_password = '';
 
 } elseif ( file_exists( dirname( __FILE__ ) . '/env_stage' ) ) {
 
-	// Define hostname for dev environment
+	// Define hostname for stage environment
 	//define('WP_HOME','http://site.dev');
 	//define('WP_SITEURL','http://site.dev');
 
@@ -54,13 +47,12 @@ if ( file_exists( dirname( __FILE__ ) . '/env_local' ) ) {
 	// See http://dancingengineer.com/computing/2009/07/how-to-install-wordpress-on-mac-os-x-leopard and comments
 	//define('FS_METHOD', 'direct');
 
-    // Playground Environment
-    define('WP_ENV', 'stage');
-    define('WP_DEBUG', true);
-
-    define('DB_NAME', 'stage_db_name');
-    define('DB_PASSWORD', 'stage_db_password');
-    define('DB_HOST', 'stage_db_host');
+    // Stage Environment
+    $wp_env = 'stage';
+    $wp_debug = true;
+    $db_name = '';
+	$db_user = '';
+	$db_password = '';
 
     // ... playground db constants
 } else {
@@ -77,11 +69,20 @@ if ( file_exists( dirname( __FILE__ ) . '/env_local' ) ) {
 	//define('FS_METHOD', 'direct');
 
     // Production Environment
-    define('WP_ENV', 'production');
-    define('WP_DEBUG', false);
+    $wp_env = 'production';
+    $wp_debug = false;
+    $db_name = '';
+	$db_user = '';
+	$db_password = '';
 
     // ... production db constants
 }
+
+	define('WP_ENV', $wp_env);
+    define('WP_DEBUG', $wp_debug);
+    define('DB_NAME', $db_name);
+    define('DB_USER', $db_user);
+    define('DB_PASSWORD', $db_password);
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
