@@ -4,9 +4,8 @@
 !.gitmodules
 !wp-content/
 !wp-config.php
-!init.sh
-!db_sync.sh
 !README.md
+!db_sync.sh
  
 # Ignore everything in the "wp-content" directory, except the "plugins"
 # and "themes" directories.
@@ -26,8 +25,7 @@ wp-content/*
 *~
 *.sass-cache
 env_local
-evn_stage
-db_sync.sh
+env_stage
 
 # OS or Editor folders
 .DS_Store
