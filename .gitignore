@@ -3,7 +3,7 @@
 !.gitignore
 !.gitmodules
 !wp-content/
-!wp-config-default.php
+!wp-config.php
 !init.sh
 !db_sync.sh
 !README.md

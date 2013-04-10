@@ -14,78 +14,73 @@
  * @package WordPress
  */
 
-if ( file_exists( dirname( __FILE__ ) . '/env_local' ) ) {
+$default = array(
+	'name'     => 'default',
+	'hostname' => 'http://site.com',
+	'debug'    => false,
+	'db_name'  => 'site_production',
+	'db_user'  => 'site_db',
+	'db_pass'  => 'xx83983DB',
+	'db_host'  => 'localhost'
+);
 
-	// Define hostname for dev environment
-	//define('WP_HOME','http://site.dev');
-	//define('WP_SITEURL','http://site.dev');
+$local = array_merge($default, array(
+	'name'     => 'local'
+	'hostname' => 'http://site.dev',
+	'debug'    => true,
+	'db_name'  => 'site_dev',
+	'db_user'  => 'root',
+	'db_pass'  => ''
+));
 
-	// Enable Uploads by Proxy
-	//define('UBP_LIVE_DOMAIN', 'site.epxhost.com');
+$stage = array_merge($default, array(
+	'name'     => 'stage',
+	'hostname' => 'http://site.epxhost.com',
+	'debug'    => true,
+	'db_name'  => 'site_stage'
+));
 
-	// Enable Auto Updater for OS X dev environment
-	// See http://dancingengineer.com/computing/2009/07/how-to-install-wordpress-on-mac-os-x-leopard and comments
-	//define('FS_METHOD', 'direct');
+$production = array_merge($default, array(
+	'name'     => 'production',
+	'hostname' => 'http://site.com'
+));
 
-    // Local Environment
-    $wp_env = 'local';
-    $wp_debug = true;
-    $db_name = '';
-	$db_user = '';
-	$db_password = '';
 
-} elseif ( file_exists( dirname( __FILE__ ) . '/env_stage' ) ) {
+if ( file_exists( dirname( __FILE__ ) . '/env_local' ) ) {	
 
-	// Define hostname for stage environment
-	//define('WP_HOME','http://site.dev');
-	//define('WP_SITEURL','http://site.dev');
-
-	// Enable Uploads by Proxy
-	//define('UBP_LIVE_DOMAIN', 'site.epxhost.com');
-
-	// Enable Auto Updater for OS X dev environment
-	// See http://dancingengineer.com/computing/2009/07/how-to-install-wordpress-on-mac-os-x-leopard and comments
-	//define('FS_METHOD', 'direct');
-
-    // Stage Environment
-    $wp_env = 'stage';
-    $wp_debug = true;
-    $db_name = '';
-	$db_user = '';
-	$db_password = '';
-
-    // ... playground db constants
-} else {
-
-	// Define hostname for dev environment
-	//define('WP_HOME','http://site.dev');
-	//define('WP_SITEURL','http://site.dev');
-
-	// Enable Uploads by Proxy
-	//define('UBP_LIVE_DOMAIN', 'site.epxhost.com');
+	// Local Environment
+	$environment = $local;
 
 	// Enable Auto Updater for OS X dev environment
 	// See http://dancingengineer.com/computing/2009/07/how-to-install-wordpress-on-mac-os-x-leopard and comments
-	//define('FS_METHOD', 'direct');
+	define('FS_METHOD', 'direct');
 
-    // Production Environment
-    $wp_env = 'production';
-    $wp_debug = false;
-    $db_name = '';
-	$db_user = '';
-	$db_password = '';
+	// Enable Uploads by Proxy
+	define('UBP_LIVE_DOMAIN', $stage['hostname']);
 
-    // ... production db constants
+
+} elseif ( file_exists( dirname( __FILE__ ) . '/env_stage' ) ) {	
+	
+	// Staging Environment
+	$environment = $stage;
+
+	// Enable Uploads by Proxy
+	// define('UBP_LIVE_DOMAIN', $production['hostname']);
+
+
+} else {	
+	
+	// Production Environment
+	$environment = $production;
+
 }
 
-	define('WP_ENV', $wp_env);
-    define('WP_DEBUG', $wp_debug);
-    define('DB_NAME', $db_name);
-    define('DB_USER', $db_user);
-    define('DB_PASSWORD', $db_password);
-
-/** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('WP_ENV',   $environment['name']);
+define('WP_DEBUG', $environment['debug']);
+define('DB_NAME',  $environment['db_name']);
+define('DB_USER',  $environment['db_user']);
+define('DB_HOST',  $environment['db_host']);
+define('DB_PASSWORD', $environment['db_pass']);
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -132,14 +127,6 @@ $table_prefix  = 'wp_';
  */
 define('WPLANG', '');
 
-/**
- * For developers: WordPress debugging mode.
- *
- * Change this to true to enable the display of notices during development.
- * It is strongly recommended that plugin and theme developers use WP_DEBUG
- * in their development environments.
- */
-define('WP_DEBUG', false);
 
 /* That's all, stop editing! Happy blogging. */
 
