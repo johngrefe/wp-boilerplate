@@ -1,1 +1,3 @@
-ssh <remoteuser>@<remoteserver> \ 'mysqldump -u <user> -p<password> <database>' \ | mysql -u <user> -p<password> <database>
+#!/bin/bash
+
+ssh remoteuser@remoteserver \ 'mysqldump -u user -ppassword database' \ | mysql -u user -ppassword database

@@ -27,6 +27,7 @@ wp-content/*
 *.sass-cache
 env_local
 evn_stage
+db_sync.sh
 
 # OS or Editor folders
 .DS_Store
