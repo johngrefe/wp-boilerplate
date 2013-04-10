@@ -29,9 +29,9 @@ rm tempfile
 
 wget http://wordpress.org/latest.zip
 
-sudo unzip ./latest.zip
+unzip ./latest.zip
 
-rm -f wp-config-sample.php
+mv wordpress/* .
 
-sudo mv -n wordpress/* .
-
+rm wp-config-sample.php
+rm latest.zip
