@@ -22,6 +22,7 @@ $default = array(
 	'db_user'  => 'site_db',
 	'db_pass'  => 'xx83983DB',
 	'db_host'  => 'localhost'
+	'password_protect' => false
 );
 
 $local = array_merge($default, array(
@@ -81,6 +82,7 @@ define('DB_NAME',  $environment['db_name']);
 define('DB_USER',  $environment['db_user']);
 define('DB_HOST',  $environment['db_host']);
 define('DB_PASSWORD', $environment['db_pass']);
+define('WP_PASSWORD_PROTECT', $environment['password_protect']);
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
