@@ -35,3 +35,4 @@ mv -n wordpress/* .
 
 rm wp-config-sample.php
 rm latest.zip
+rm -rf wordpress
