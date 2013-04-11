@@ -8,7 +8,14 @@
 	<title><?php wp_title(); ?></title>
 	<meta name="description" content="" />
 
-	<link rel="stylesheet/css" href="<?php bloginfo('template_directory'); ?>/style/css/screen.css" />
+	<?php
+	// Cache buster for stylesheet
+	$stylesheet = '/style/css/screen.css';
+	$style_path = get_template_directory() . $stylesheet;
+	$style_uri  = get_bloginfo('template_url') . $stylesheet . '?' . filemtime($style_path);
+	?>
+
+	<link rel="stylesheet" href="<?php echo $style_uri; ?>" />
 
 	<?php wp_head(); ?>
 </head>
