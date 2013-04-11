@@ -78,11 +78,15 @@ if ( file_exists( dirname( __FILE__ ) . '/env_local' ) ) {
 
 define('WP_ENV',   $environment['name']);
 define('WP_DEBUG', $environment['debug']);
+define('WP_PASSWORD_PROTECT', $environment['password_protect']);
+
+define('WP_HOME',    $environment['hostname']);
+define('WP_SITEURL', $environment['hostname']);
+
 define('DB_NAME',  $environment['db_name']);
 define('DB_USER',  $environment['db_user']);
 define('DB_HOST',  $environment['db_host']);
 define('DB_PASSWORD', $environment['db_pass']);
-define('WP_PASSWORD_PROTECT', $environment['password_protect']);
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
