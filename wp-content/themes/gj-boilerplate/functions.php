@@ -1,7 +1,7 @@
 <?php
 
 include('inc/assets.php');
-include('inc/init.php')
+include('inc/init.php');
 
 if( WP_PASSWORD_PROTECT == true ){
 	
