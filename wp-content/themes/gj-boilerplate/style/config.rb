@@ -2,7 +2,7 @@
 require 'compass-normalize'
 
 # Set this to the root of your project when deployed:
-http_path = "/wp-content/themes/boilerplate/style/"
+http_path = "/wp-content/themes/theme_dir/style/"
 css_dir = "css"
 sass_dir = "sass"
 images_dir = "../img"
