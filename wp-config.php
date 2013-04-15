@@ -21,12 +21,12 @@ $default = array(
 	'db_name'  => 'site_production',
 	'db_user'  => 'site_db',
 	'db_pass'  => 'xx83983DB',
-	'db_host'  => 'localhost'
+	'db_host'  => 'localhost',
 	'password_protect' => false
 );
 
 $local = array_merge($default, array(
-	'name'     => 'local'
+	'name'     => 'local',
 	'hostname' => 'http://site.dev',
 	'debug'    => true,
 	'db_name'  => 'site_dev',
