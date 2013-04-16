@@ -9,6 +9,7 @@ function enqueue_scripts() {
 	
 	// Plugins
 	wp_enqueue_script('placeholder', get_bloginfo('template_directory') . '/js/libs/jquery.placeholder.min.js', array('jquery'), null, true);
+	wp_enqueue_script('imagesloaded', get_bloginfo('template_directory') . '/js/libs/jquery.imagesloaded.min.js', array('jquery'), '2.1.1', true);
 
 	// Misc
 	wp_enqueue_script('plugins', get_bloginfo('template_directory') . '/js/plugins.js', false, '0', true);
