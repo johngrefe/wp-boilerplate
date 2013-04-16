@@ -20,7 +20,7 @@ $default = array(
 	'debug'    => false,
 	'db_name'  => 'site_production',
 	'db_user'  => 'site_db',
-	'db_pass'  => 'xx83983DB',
+	'db_pass'  => 'pass',
 	'db_host'  => 'localhost',
 	'password_protect' => false
 );
