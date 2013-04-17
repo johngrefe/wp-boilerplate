@@ -24,8 +24,7 @@ wp-content/*
 *.vi
 *~
 *.sass-cache
-env_local
-env_stage
+env_*
 
 # OS or Editor folders
 .DS_Store
