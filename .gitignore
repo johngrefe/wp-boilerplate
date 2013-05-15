@@ -2,16 +2,17 @@
 /*
 !.gitignore
 !.gitmodules
-!wp-content/
-!wp-config.php
+!public/
+!public/wp-content/
+!public/wp-config.php
 !README.md
 !db_sync.sh
  
 # Ignore everything in the "wp-content" directory, except the "plugins"
 # and "themes" directories.
-wp-content/*
-!wp-content/plugins/
-!wp-content/themes/
+public/wp-content/*
+!public/wp-content/plugins/
+!public/wp-content/themes/
 
 # Ignore system files, misc.
 *.diff
