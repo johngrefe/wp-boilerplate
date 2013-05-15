@@ -1,0 +1,12 @@
+[submodule "acf"]
+	path = public/wp-content/plugins/acf
+	url = git://github.com/elliotcondon/acf.git
+[submodule "WPThumb"]
+	path = public/wp-content/plugins/WPThumb
+	url = git://github.com/humanmade/WPThumb.git
+[submodule "uploads-by-proxy"]
+	path = public/wp-content/plugins/uploads-by-proxy
+	url = git@bitbucket.org:brainstormmedia/uploads-by-proxy.git
+[submodule "gjmaps"]
+	path = public/wp-content/plugins/gjmaps
+	url = git@github.com:GunnJerkens/gjmaps.git
