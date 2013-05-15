@@ -1,12 +1,7 @@
 # Ignore everything in the root except the "wp-content" directory.
-/*
-!.gitignore
-!.gitmodules
-!public/
+public/*
 !public/wp-content/
 !public/wp-config.php
-!README.md
-!db_sync.sh
  
 # Ignore everything in the "wp-content" directory, except the "plugins"
 # and "themes" directories.
